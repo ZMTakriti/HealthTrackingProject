@@ -20,7 +20,12 @@ Including another URLconf
 #from django.contrib import admin
 #from django.urls import path
 
+from django.conf.urls import include, url
+import HealthTrackingApp.views
+
+# Django processes URL patterns in the order they appear in the array
 urlpatterns = [
-    # Uncomment the next line to enable the admin:
-    #path('admin/', admin.site.urls)
+    url(r'^$', HealthTrackingApp.views.index, name='index'),
+    url(r'^home$', HealthTrackingApp.views.index, name='home'),
 ]
+
